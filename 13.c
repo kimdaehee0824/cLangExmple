@@ -1,21 +1,18 @@
 #include <stdio.h>
 int main()
 {
-    int i, num, sum = 0;
+    int i, a, num = 0;
     scanf("%d", &num);
-    for ( i = 1; i <= num; i++)
+    int max = 0;
+    for ( i = 0; i <= num; i++)
     {
-        printf("%d\n", i);
-        printf("\n");
-
-        for (int j = 1; j < 10; j++)
+        scanf("%d", &a);
+        if (max <= a)
         {
-            printf("%d * %d = %d\n", i, j, i * j);
+            max = a;
         }
-
-        printf("\n");
     }
-
+    printf("%d", max);
     
     return 0;
 }
