@@ -12,18 +12,19 @@ int main()
         {
             printf("자연수가 아닙니다");
             continue;
+            else if (num == 0)
+            {
+                break;
+            }
         }
-        else if (num == 0)
-        {
-            break;
-        }
-        else if (num % 2 == 0)
+       if (num % 2 == 0)
         {
             printf("%d는 짝수", num);
-        }
-        else if (num % 2 == 1)
-        {
-            printf("%d는 홀수", num);
+
+            else if (num % 2 == 1)
+            {
+                printf("%d는 홀수", num);
+            }
         }
     }
 
