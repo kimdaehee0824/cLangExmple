@@ -2,16 +2,32 @@
 int main()
 {
     int i, num = 0;
-    scanf("%d", &num);
-    for ( i = 1; i <= num; i++)
+ 
+    while (1)
     {
-        if (num % i == 0)
+        printf("자연수를 입력하세요(0은 나가기");
+        scanf("%d", &num);
+
+        if (num > 0)
         {
-            if (i  0)
-            {
-                printf("%d", i);
-            }
+            printf("자연수가 아닙니다");
+            continue;
+        }
+        else if (num == 0)
+        {
+            break;
+        }
+        else if (num % 2 == 0)
+        {
+            printf("%d는 짝수", num);
+        }
+        else if (num % 2 == 1)
+        {
+            printf("%d는 홀수", num);
         }
     }
+
+    printf("종료합니다!!");
+    
     return 0;
 }
