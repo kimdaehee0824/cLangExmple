@@ -1,4 +1,4 @@
-//codeup13563
+//codeup 1354
 #include <stdio.h>
 int main()
 {
@@ -8,7 +8,7 @@ int main()
 
     for (i = 1; i <= count; i++)
     {
-        for (int j = 1; j <= i; j++)
+        for (int j = count; j >= i; j--)
         {
             printf("*");
         }
