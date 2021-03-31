@@ -2,10 +2,9 @@
 #include <stdio.h>
 int main()
 {
-    int i;
     int count;
     scanf("%d", &count);
-    for ( i = 1; i <= count; i++)
+    for (int i = 1; i <= count; i++)
     {
         for (int j = count; j >= i + 1; j--)
         {
@@ -18,18 +17,6 @@ int main()
         }
         printf("\n");
     }
-    for (int j = count; j >= i + 1; j--)
-        {
-            printf(" ");
-        }
-    
-        for (int j = 1; j <= i; j++)
-        {
-            printf("*");
-        }
-        printf("\n");
-        
-    }
-    
+   
     return 0;
 }
