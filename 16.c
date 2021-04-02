@@ -1,49 +1,45 @@
 #include <stdio.h>
 int main()
 {
-    int count;
-    scanf("%d", &count);
-    for (int i = 1; i <= count; i++)
+    int a, b, c, sum = 0;
+    int big;
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a == b && b== c)
+        printf("%d", 10000 + a * 1000);
+    else if (a == b || a == c || b == c)
     {
-        for (int j = 1; j <= i; j++)
-        {
-            printf("*");
-        }
-        for (int j = count; j >= i + 1; j--)
-        {
-            printf(" ");
-        }
-        for (int j = count; j >= i + 1 ; j--)
-        {
-            printf(" ");
-        }
-        for (int j = 1; j <= i; j++)
-        {
-            printf("*");
-        }
-        printf("\n");
+        if (a == b)
+            printf("%d", 1000 + a * 100);
+        else if (a == c)
+            printf("%d", 1000 + a * 100);
+        else if (b == c)
+            printf("%d", 1000 + b * 100);
     }
-    for (int i = 1; i <= count; i++)
+    else if (a != b && a != c)
     {
-        for (int j = count - 1; j >= i; j--)
+        if (a > b)
         {
-            printf("*");
+            if (a > c)
+                printf("%d", a * 100);
+            else
+                printf("%d", c * 100);
         }
-
-        for (int j = 1; j <= i; j++)
+        else if (b > a)
         {
-            printf(" ");
+            if (b > c)
+                printf("%d", b * 100);
+            else
+                printf("%d", c * 100);
         }
-
-        for (int j = 0; j < i; j++)
+        else if (c > a)
         {
-            printf(" ");
+            if (c > b)
+                printf("%d", c * 100);
+            else
+                printf("%d", b * 100);
         }
-        for (int j = count - 1; j >= i; j--)
-        {
-            printf("*");
-        }
-        printf("\n");
-    }  
+    }
+    
     return 0;
 }
