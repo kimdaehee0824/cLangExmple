@@ -1,35 +1,55 @@
 #include <stdio.h>
 int main()
 {
-    int nArr1[5] = {1, 2, 3, 4, 5};
-    int nArr2[] = {2, 4, 6, 8, 10, 12, 14, 16};
-    int nArr3[10] = {1, 3};
-    int ar1Len, ar2Len, ar3Len, i;
+    double nArr[5];
+    double sum = nArr[0];
+    double sum2 = nArr[0];
+    double sum3 = 0, sum4 = 0;
+    int i;
 
-    printf("배열 nArr1의 크기 : %d\n", sizeof(nArr1));
-    printf("배열 nArr2의 크기 : %d\n", sizeof(nArr2));
-    printf("배열 nArr3의 크기 : %d\n", sizeof(nArr3));
-     
-    ar1Len = sizeof(nArr1) / sizeof(int);
-    ar2Len = sizeof(nArr2) / sizeof(int);
-    ar3Len = sizeof(nArr3) / sizeof(int);
-
-    for (i = 0; i < ar1Len; i++)
+    printf(" 배열의 요소 5개를 입력하세요.\n");
+    for (i = 0; i < 5; i++)
     {
-        printf("%d ", nArr1[i]);
+        scanf("%lf", &nArr[i]);
+    }
+
+    printf("\n배열의 요소\n");
+    for (i = 0; i < 5; i++)
+    {
+        printf("%lf ", nArr[i]);
     }
     printf("\n");
-
-    for (i = 0; i < ar2Len; i++)
+    for ( i = 0; i < 5; i++)
     {
-        printf("%d ", nArr2[i]);
+        if (nArr[0] < nArr[i + 1])
+        {
+            sum = nArr[i];
+        }
     }
-    printf("\n");
+    printf("최댓값 : %lf ", sum);
 
-    for (i = 0; i < ar3Len; i++)
+    for (i = 0; i < 5; i++)
     {
-        printf("%d ", nArr3[i]);
+        if (nArr[0] > nArr[i])
+        {
+            sum2 = nArr[i];
+        }
     }
-    printf("\n");
+    printf("최솟값 : %lf ", sum2);
+
+    for (i = 0; i < 5; i++)
+    {
+        sum3 += nArr[i];
+    }
+
+    printf("합계 : %lf ", sum3);
+
+    for (i = 0; i < 5; i++)
+    {
+        sum4 += nArr[i];
+    }
+    double x = sum4 / 5;
+    printf("평균 : %lf ", x);
+
     return 0;
 }
