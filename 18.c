@@ -1,23 +1,20 @@
 #include <stdio.h>
 int main()
 {
-    int i, x;
-    scanf("%d", &x);
-    int nArr[1000000];
-    int max = -1000000, min = 10000000;
-    
-    for (i = 0; i < x; i++)
-    {
-        scanf("%d", &nArr[i]);
+    char ch[5000];
+    scanf("%s", ch);
+    int num = 0;
 
-        if(max < nArr[i])
-            max = nArr[i];
-        if(min > nArr[i])
-            min = nArr[i];
+    for (int i = 0; ch[i] != '\0'; i++)
+    {
+        if (ch[i] >= '0' && ch[i] <= '9')
+            num = num + ch[i] - '0'; 
     }
 
-    printf("%d %d", min, max);
-
+    if (num % 3 == 0)
+        printf("1");
+    else
+        printf("0");
 
     return 0;
 }
