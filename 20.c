@@ -6,7 +6,7 @@ int main()
     scanf("%d %d", &n, &m);
     for (int i = n - 1; i >= 0; i--)
     {
-        for (int j = m - 1; j >= 0; j--)
+        for (int j = 0; j < m; j++)
         {
             arr1[i][j] = num++;
         }
