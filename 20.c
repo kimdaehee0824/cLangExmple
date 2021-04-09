@@ -1,23 +1,23 @@
 #include <stdio.h>
 int main()
 {
-    int i;
-    char arr[100];
-    fgets(arr, 101, stdin);
-    for (i = 0; arr[i] != '\0'; i++)
+    int arr1[100][100];
+    int n, num = 1;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
     {
-        if (arr[i] >= 65 && arr[i] <= 90)
+        for (int j = 0; j < n; j++)
         {
-            printf("%c", arr[i] + 32);
+            arr1[i][j] = num ++;
         }
-        else if (arr[i] >= 97 && arr[i] <= 122)
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
         {
-            printf("%c", arr[i] - 32);
+            printf("%d ", arr1[i][j]);
         }
-        else
-        {
-            printf("%c", arr[i]);
-        }
+        printf("\n");
     }
     return 0;
 }
