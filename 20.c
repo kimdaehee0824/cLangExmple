@@ -8,14 +8,14 @@ int main()
     {
         if (i % 2 == 0)
         {
-            for (int j = 0; j < n; j++)
+            for (int j = n - 1; j >= 0; j--)
             {
                 arr1[i][j] = num++;
             }
         }
         else
         {
-            for (int j = n - 1; j >= 0; j--)
+            for (int j = 0; j < n; j++)
             {
                 arr1[i][j] = num++;
             }
