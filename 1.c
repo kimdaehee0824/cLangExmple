@@ -16,7 +16,7 @@ int main()
 
     if (opt == 2)
         resalt = num1 - num2;
-    
+
     if (opt == 3)
         resalt = num1 * num2;
 

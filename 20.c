@@ -5,18 +5,18 @@ int main()
     int n, m, num = 1;
     scanf("%d %d", &n, &m);
 
-    for (int i = n - 1; i >= 0; i--)
+    for (int j = m - 1; j >= 0; j--)
     {
-        if ((n - i) % 2 == 0)
+        if ((m - j) % 2 == 0)
         {
-            for (int j = 0; j < m; j++)
+            for (int i = n - 1; i >= 0; i--)
             {
                 arr1[i][j] = num++;
             }
         }
         else
         {
-            for (int j = m - 1; j >= 0; j--)
+            for (int i = 0; i < n; i++)
             {
                 arr1[i][j] = num++;
             }
