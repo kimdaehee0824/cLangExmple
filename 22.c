@@ -1,24 +1,14 @@
 #include <stdio.h>
 int main()
 {
-    int arr1[5][5] = {0};
-    int n, num = 1;
+    char *arr;
+    int n[2] = {1819043144, 6184559};
 
-    for (int i = 0; i < n; i++)
-    {
+    arr = n;
 
-        for (int j = 0; j < n; j++)
-        {
-            arr1[i][j] = num++;
-        }
-    }
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            printf("%d", arr1[i][j]);
-        }
-        printf("\n");
-    }
+    printf("%s", arr);
+
     return 0;
 }
+
+// 실행 결과가 예측이 되나요???

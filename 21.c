@@ -1,35 +1,22 @@
 #include <stdio.h>
 int main()
 {
-    int arr[100][100];
-    int n, m, i, j, num, si, sj;
-    scanf("%d %d", &n, &m);
-    si = sj = 0;
-    num = 1;
-    while (num <= n * m)
-    {
-        for (i = si, j = sj; i >= 0 && j < m; i--, j++)
-            arr[i][j] = num++;
+    int t, h, w, n, i;
 
-        if (si < n - 1)
+    scanf("%d", &t);
+
+    for (i = 0; i < t; i++)
+    {
+        scanf("%d %d %d", &h, &w, &n);
+
+        if (0 == n % h)
         {
-            si+;
+            printf("%d%02d\n", h, n / h);
         }
         else
         {
-            sj++;
+            printf("%d%02d\n", n % h, n / h + 1);
         }
     }
-
-    // 출력
-    for (i = 0; i < n; i++)
-    {
-        for (j = 0; j < m; j++)
-        {
-            printf("%d ", arr[i][j]);
-        }
-        printf("\n");
-    }
-
     return 0;
 }
