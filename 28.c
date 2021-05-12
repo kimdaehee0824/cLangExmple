@@ -1,18 +1,54 @@
 #include <stdio.h>
 // 함수 선언
-int NumCompare(int num1, int num2);
+int GetMax(int num1, int num2, int num3); // 가장 큰 수 반환하는 함수
+int GetMin(int num1, int num2, int num3); // 가장 작은 수 반환하는 함수
+
 int main()
 {
-    printf("3과 4중에 큰 수는 %d이다\n", NumCompare(3, 4));
-    printf("7과 2중에 큰 수는 %d이다\n", NumCompare(7, 2));
+    int num1, num2, num3;
+    printf("세 개의 정수 입력 : ");
+    scanf("%d %d %d", &num1, &num2, &num3);
+    printf("가장 큰 수 : %d\n", GetMax(num1, num2, num3));
+    printf("가장 작은 수 : %d\n", GetMin(num1, num2, num3));
     return 0;
 }
-// 함수 정의
-int NumCompare(int num1, int num2)
-{
 
-    if (num1 > num2)
-        return num1; // return 문이 실행되면 값을 반환하면서 함수를 빠져나간다!
-    else
+int GetMax(int num1, int num2, int num3)
+{
+    if (num1 >= num2 && num1 >= num3)
+    {
+        return num1;
+    }
+    else if (num2 >= num1 && num2 >= num3)
+    {
         return num2;
+    }
+    else if (num3 >= num1 && num3 >= num2)
+    {
+        return num3;
+    }
+    else
+    {
+        return 0;
+    }
+    
+}
+int GetMin(int num1, int num2, int num3)
+{
+    if (num1 <= num2 && num1 <= num3)
+    {
+        return num1;
+    }
+    else if (num2 <= num1 && num2 <= num3)
+    {
+        return num2;
+    }
+    else if(num3 <= num1 && num3 <= num2)
+    {
+        return num3;
+    }
+    else
+    {
+        return 0;
+    }
 }
