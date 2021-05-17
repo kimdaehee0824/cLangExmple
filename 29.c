@@ -10,7 +10,6 @@ int main()
     printf("선택 >>");
     scanf("%d", &order);
     
-
     if (order == 1)
     {
         printf("섭씨 입력");
