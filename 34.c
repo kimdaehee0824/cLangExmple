@@ -1,19 +1,18 @@
 #include <stdio.h>
-
-void add(int val);
-int num;
+int addToTotal(int num);
 int main()
 {
-    printf("num : %d\n", num);
-    add(3);
-    printf("num : %d\n", num);
-
-    num++; // 전역변수 num의 1 증가 
-    printf("num : %d\n", num);
-    return 0;
+    int num, i;
+    for (i = 0; i < 3; i++)
+    {
+        printf("입력%d : ", i + 1);
+        scanf("%d", &num);
+        printf("\t누적 : %d\n", addToTotal(num));
+    }
 }
-
-void add(int val)
-{
-    num += val;
+int addToTotal(int num)
+{₩1 ㅂㅃㅂ
+    static int total = 0;
+    total += num;
+    return total;
 }
