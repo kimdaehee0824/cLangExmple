@@ -1,18 +1,23 @@
 #include <stdio.h>
-int addToTotal(int num);
+void Input(char *);
+void Upper(char *);
 int main()
 {
-    int num, i;
-    for (i = 0; i < 3; i++)
-    {
-        printf("입력%d : ", i + 1);
-        scanf("%d", &num);
-        printf("\t누적 : %d\n", addToTotal(num));
-    }
+    char buffer[1025] = {0};
+    Input(buffer);
+    Upper(buffer);
+    printf("%s\n", buffer);
+    return 0;
 }
-int addToTotal(int num)
-{₩1 ㅂㅃㅂ
-    static int total = 0;
-    total += num;
-    return total;
+void Input(char buffer[])
+{
+    scanf("%s", buffer);
+}
+void Upper(char buffer[])
+{
+    for (int i = 0; i < 1024; i++)
+    {
+        if (buffer[i] >= 'a' && buffer[i] <= 'z')
+            buffer[i] -= 32;
+    }
 }
