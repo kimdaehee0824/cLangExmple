@@ -1,36 +1,38 @@
 #include <stdio.h>
-a
-int Fun1(int A, int B, int C);
-int Fun2(int A, int B, int C);
-int Fun3(int A, int B, int C);
-int Fun4(int A, int B, int C);
-
+void Trans(char res[], int N, int B);
 int main()
 {
-    int A, B, C;
-    scanf("%d %d %d", &A, &B, &C);
-
-    printf("%d\n", Fun1(A, B, C));
-    printf("%d\n", Fun2(A, B, C));
-    printf("%d\n", Fun3(A, B, C));
-    printf("%d\n", Fun4(A, B, C));
-
+    char res[35] = {0};
+    int num, B;
+    scanf("%d %d", &num, &B);
+    Trans(res, num, B);
+    printf("%s\n", res);
     return 0;
 }
-
-int Fun1(int A, int B, int C)
+void Trans(char res[], int N, int B)
 {
-    return (A + B) % C;
-}
-int Fun2(int A, int B, int C)
-{
-    return ((A % C) + (B + C)) % C;
-}
-int Fun3(int A, int B, int C)
-{
-    return (A * B) % C;
-}
-int Fun4(int A, int B, int C)
-{
-    return ((A % B) * (B % C)) % C;
+    int ahrt = N;
+    int tmp, i;
+    for (i = 0; ;i++)
+    {
+        tmp = ahrt % B;
+        if(tmp <= 9 && tmp >=0)
+            res[i] = tmp + '0';
+        else
+        {
+            res[i] = tmp-10 + 'A';
+        }
+        
+        ahrt = ahrt / B;
+        if(ahrt == 0) break;
+    }
+    
+    int len = i-1;
+    for(int j = 0; j <= len / 2; j++)
+    {
+        tmp = res[j];
+        res[j] = res[len-j];
+        res[len-j] = tmp;
+    }
+   
 }
