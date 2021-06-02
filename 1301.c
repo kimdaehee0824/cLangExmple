@@ -1,35 +1,46 @@
-// 수행 #5 문자열 길이 만들기 함수구현
+#pragma warning(disable : 4996)
+// 수행 #7 회원 정보를 입력받고 출력하기
 // 학번 : 1301
 // 이름 : 김대희
-#pragma warning(disable : 4996)
 #include <stdio.h>
+// 구조체 선언 부분
+typedef struct MemberInformation
+{
+    char name[30];
+    int age;
+
+} MemberInformation;
 // 함수 선언 부분
-int GetLength(char *myStr);
+int count;
+MemberInformation people[100];
+void input();
+void output();
+
+// main 함수
 int main()
 {
-    char buf[1000] = {0};
-    printf("문자열 입력 : ");
-    gets(buf);                      // 임의의 문자열을 입력
-    int length = GetLength(buf);    // 함수 호출
-    printf("\n%s ", buf);
-    printf("문자열 길이는 %d 입니다.\n", length);
+    input();
+    output();
     return 0;
 }
-// 함수 정의부분
-int GetLength(char *myStr)
+void input()
 {
-    int count=0;
-    for (int i = 0; i < 1000; i++)
+    printf("입력 회원 수 : ");
+    scanf("%d", &count);
+    printf("%d명 회원정보 입력\n", count);
+
+    for (int i = 0; i < count; i++)
     {
-        if (myStr[i] == '\0')
-        {
-            break;
-        }
-        else
-        {
-            count++;
-        }
-        
+        printf("%d : ", i + 1);
+        scanf("%d %s", &people[i].age, people[i].name);
     }
-    return count;
+}
+void output()
+{
+    printf("%d명 회원정보 출력\n", count);
+    for (int i = 0; i < count; i++)
+    {
+        printf("%d %s\n", people[i].age, people[i].name);
+    }
+    
 }

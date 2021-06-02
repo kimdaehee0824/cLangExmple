@@ -1,28 +1,39 @@
 #include <stdio.h>
-typedef struct Employee
+typedef struct point
 {
-    char name[10];
-    char userNumber;
-    int cost;
-} Employee;
+    int xpos;
+    int ypos;
 
+} Point;
+
+typedef struct Rectangle
+{
+    Point p1;
+    Point p2;
+
+} Rectangle;
+
+void ShowRecArea(Rectangle rect);
+void ShowRecPos(Rectangle rect);
 int main()
 {
-    // struct Person 구조체 변수 person 선언
-    Employee person;
-    // 멤버 입력받기
-    printf("이름 : ");
-    scanf("%s", person.name);
-    printf("주민번호 : ");
-    scanf("%s", &person.userNumber);
-    printf(" : ");
-    scanf("%d", &person.cost);
-    
-    printf("\n데이터 출력\n");
-    printf("person.height : %.1lf\n", person.height);
-    printf("person.weight : %.1lf\n", person.weight);
-    printf("person.name : %s\n", person.name);
-    printf("person.grade : %d\n", person.grade);
-
-    return 0;
+    Rectangle rec1 = {{1, 1}, {4, 4}};
+    Rectangle rec2 = {{0, 0}, {7, 5}};
+    ShowRecArea(rec1);
+    ShowRecPos(rec1);
+    ShowRecArea(rec2);
+    ShowRecPos(rec2);
+}
+void ShowRecArea(Rectangle rect)
+{
+    int sum;
+    sum = (rect.p2.xpos - rect.p1.xpos) * (rect.p2.ypos - rect.p1.ypos);
+    printf("넓이 : %d\n", sum);
+}
+void ShowRecPos(Rectangle rect)
+{
+    printf("좌 상단 : [%d %d]\n", rect.p1.xpos, rect.p1.ypos);
+    printf("좌 하단 : [%d %d]\n", rect.p1.xpos, rect.p2.ypos);
+    printf("우 상단 : [%d %d]\n", rect.p2.xpos, rect.p1.ypos);
+    printf("좌 히단 : [%d %d]\n", rect.p2.xpos, rect.p2.ypos);
 }
