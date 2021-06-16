@@ -1,33 +1,19 @@
 #include <stdio.h>
-typedef enum color
+enum TextAttribute
 {
-    Red,
-    Green,
-    Blue,
-    SIZE
-    
-} COLOR;
-
-void PrintColor(COLOR cor);
+    Bold = 1,
+    Underline = 2,
+    Italic = 4,
+    Strikethrough = 8
+};
 int main()
 {
-    COLOR cor;
-    for (cor = Red; cor < SIZE; cor += 1)
-        PrintColor(cor);
+    // BitFlag 사용
+    int textAttrs = 0;
+    textAttrs |= Bold;
+    textAttrs |= Underline;
+    printf("%d\n", textAttrs);
+    if (textAttrs & Underline)
+        printf("%d\n", Underline);
     return 0;
-}
-void PrintColor(COLOR cor)
-{
-    switch (cor)
-    {
-    case Red:
-        printf("Red 출력\n");
-        break;
-    case Blue:
-        printf("Blue 출력\n");
-        break;
-    case Green:
-        printf("Green 출력\n");
-        break;
-    }
 }
