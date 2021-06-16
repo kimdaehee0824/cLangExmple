@@ -76,7 +76,7 @@ void teacherMode()
     scanf("%d", &whatMenu);
     system("cls");
     if (whatMenu == 0)
-        ;
+        printf("종료.");
     if (whatMenu == 2)
     {
         for (int i = 0; i < 20; i++)
@@ -96,14 +96,19 @@ void teacherMode()
                 }
                 UIDesignLine();
             }
-            int finalMenu = 0;
-            printf("모두 확인하였습니다.종료하시려면 0번을, 처음 화면으로 넘어가고 싶으시다면 1번을 눌러주세요.\n\t입력 : ");
-            scanf("%d", &finalMenu);
-            if (finalMenu == 0)
-                break;
-            if (finalMenu == 1)
-                WhatGonnaDo();
         }
+        int finalMenu = 0;
+        printf("모두 확인하였습니다.종료하시려면 0번을, 처음 화면으로 넘어가고 싶으시다면 1번을 눌러주세요.\n\t입력 : ");
+        scanf("%d", &finalMenu);
+        if (finalMenu == 0)
+            ;
+        if (finalMenu == 1)
+        {
+            system("cls");
+            WhatGonnaDo();
+        }
+        else
+            printf("종료.");
     }
     else if (whatMenu != 2)
     {
@@ -148,18 +153,19 @@ void teacherMode()
         printf("모두 확인하였습니다.종료하시려면 0번을, 처음 화면으로 넘어가고 싶으시다면 1번을 눌러주세요.\n\t입력 : ");
         scanf("%d", &finalMenu);
         if (finalMenu == 0)
-            if (finalMenu == 1)
-            {
-                WhatGonnaDo();
-                system("cls");
-            }
+            ;
+        if (finalMenu == 1)
+        {
+            system("cls");
+            WhatGonnaDo();
+        }
     }
 }
 void studentMode()
 {
     int count;
     int ifTrue = 0;
-    char buf[30];
+    char buf[10];
     system("cls");
     UIDesignLine();
     printf("입력할 학생의 수를 입력하세요.\n"
@@ -186,12 +192,12 @@ void studentMode()
         printf("%d번째", i + 1);
         UIDesignLine();
         printf("%d번째 학생의 학번을 입력하세요.\n입력 :", i + 1);
-        if (scanf("%d", &student[i].schoolNumber)  )
+        if (scanf("%d", &student[i].schoolNumber) != 1)
         {
             printf("잘못 입력하셨습니다.\n다시 입력 :");
             gets(buf);
             fflush(stdin);
-            scanf("%d", &student[i].schoolNumber);
+            scanf("%d", &count);
         }
         printf("%d번째 학생의 이름을 입력하세요.\n입력 :", i + 1);
         scanf("%s", student[i].name);
@@ -238,12 +244,14 @@ void studentMode()
         UIDesignEqual();
         system("cls");
     }
-    printf("설문조사를 모두 입력했습니다.\n (결과를 보시려면 1번을 입력, 처음 화면으로 넘어가고 싶다면 2번을 입력)\n\t입력 : ");
+    printf("설문조사를 모두 입력했습니다.\n (결과를 보시려면 1번을 입력, 처음 화면으로 넘어가고 싶다면 2번을 입력), 종료는 아무 키나 누르세요.\n\t입력 : ");
     scanf("%d", &ifTrue);
     if (ifTrue == 1)
         teacherMode();
     else if (ifTrue == 2)
         WhatGonnaDo();
+    else
+        printf("종료");
 }
 void WhatGonnaDo()
 {
@@ -259,15 +267,22 @@ void WhatGonnaDo()
     printf("입력 :");
     if (scanf("%d", &what) != 1)
     {
-        printf("잘못 입력하셨습니다.\n다시 입력 :");
         gets(buf);
+        printf("잘못 입력하셨습니다.\n다시 입력 :");
         fflush(stdin);
         scanf("%d", &what);
     }
     if (what == 1)
+    {
+        system("cls");
         studentMode();
+    }
+
     else if (what == 2)
+    {
+        system("cls");
         teacherMode();
+    }
     else if (what == 0)
         printf("종료.");
 }
