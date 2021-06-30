@@ -1,4 +1,4 @@
-#pragma warning(disable : 4996)
+#pragma  warning(disable : 4996)
 // 수행 #9 구조체로 실수 저장 하기
 // 학번 : 1301
 // 이름 : 김대희
