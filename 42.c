@@ -1,17 +1,36 @@
 #include <stdio.h>
+#include <string.h>
 int main()
 {
-    char s[100] = "";
-    int count[26] = {0};
-    scanf("%s", s);
-    for (int i = 0; i < 100; i++)
+
+    int TCCount;
+    int count, len;
+    char TC[80] = "";
+
+    scanf("%d", &TCCount);
+    int sum;
+    while(TCCount--)
     {
-        count[s[i] - 'a']++;
-    }
-    for (int i = 0; i < 26; i++)
-    {
-        printf("%d ", count[i]);
-    }
+        scanf("%s", TC);
+
+        len = strlen(TC);
+
+        count = 0;
+        sum = 0;
+        for (int i = 0; i < len; i++)
+        {
+            if (TC[i] == 'O')
+            {
+                count++;
+            }
+            else
+                count = 0;
+
+            sum += count;
+        }
+        printf("%d\n", sum);
+    }    
     
     return 0;
 }
+
