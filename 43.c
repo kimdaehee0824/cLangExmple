@@ -1,23 +1,19 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 int main()
 {
-    char str1[20] = "First~";
-    char str2[20] = "Second";
-    char str3[20] = "123456789";
-    char str4[20] = "SimpleNum";
-    char *pstr;
-    // case 1
-        strcat(str1, str2);
-        puts(str1);
-    // case 2
-        strncat(str3, str4, 7);
-        puts(str3);
-    pstr = (char *)malloc(sizeof(str3) * strlen(str3) + sizeof(str4) * strlen(str4));
-    strcpy(pstr, str3);
-    strcat(pstr, str4);
-    puts(pstr);
-    free(pstr);
+    char str1[100];
+    int count = 0;
+    fgets(str1, 100, stdin);
+
+    for (int i = 0; i < strlen(str1); i++)
+    {
+        if (str1[i] == 'a' || str1[i] == 'i' || str1[i] == 'e' || str1[i] == 'o' || str1[i] == 'u')
+        {
+            count++;
+        }
+    }
+    printf("%d", count);
+
     return 0;
 }

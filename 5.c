@@ -3,17 +3,16 @@ int main()
 {
     int a, b, c, d;
 
-    scanf("%d %d %d %d", &a, &b, &c, &d);
+    int i;
 
-    if ((double)a / b > (double)c / d)
-        printf(">");
-
-    else if ((double)a / b == (double)c / d)
-        printf("=");
-
-    else if ((double)a / b < c / d)
-        printf("<");
-
+    while (1)
+    {
+        while (1)
+        {
+            i++;
+            printf("%d ", i);
+        }
+    }
 
     return 0;
 }
